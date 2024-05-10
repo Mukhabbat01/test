@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>수강신청 조회</h1>
+<form  method="post" action="/registrations">
+    phone: <input type="text" name="studentPhone" id="studentPhone">
+    name: <input type="text" name="studentName" id="studentName">
+    <input type="submit" value="조회">
+</form> 
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="javascript.js"></script>
+<script>
+    function CheckId(){
+        const studentPhone = document.getElementById("studentPhone").value;
+        const studentName = document.getElementsByName("studentName")[0].value; 
+        axios.get("/idCheck",{
+            params:{
+                studentPhone : studentPhone,
+                studentName : studentName
+            }
+        }).then(function (res){
+            alert(res.data)
+        })
+
+    }
+</script>
+</body>
+</html>
