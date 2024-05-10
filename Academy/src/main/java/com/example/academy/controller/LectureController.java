@@ -23,11 +23,11 @@ import lombok.RequiredArgsConstructor;
 public class LectureController {
 	private final LectureService lectureService;
 	
-	@PostMapping("/api/lecture/save")
-	@ResponseBody
-	public String lectureSave(@RequestBody ReqLectureDto lectureDto) {
-		return lectureService.lectureSave(lectureDto);
-	}
+//	@PostMapping("/api/lecture/save")
+//	@ResponseBody
+//	public String lectureSave(@RequestBody ReqLectureDto lectureDto) {
+//		return lectureService.lectureSave(lectureDto);
+//	}
 	
 	
 	@PatchMapping("/api/lecture/{lecId}/update")
